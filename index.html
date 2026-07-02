@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ali Habashi | Portfolio</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css?v=7" />
+
+    <link rel="preload" href="https://fonts.cdnfonts.com/css/arcade-classic" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.cdnfonts.com/css/arcade-classic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Raleway:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="glitch-overlay"></div>
+    
+    <div class="kernel-control">
+      <span class="control-label">RAW_OVERRIDE</span>
+      <label class="switch">
+        <input type="checkbox" id="kernel-toggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="canvas-container">
+      <canvas id="gravity"></canvas>
+    </div>
+
+    <header class="hero-section">
+      <div class="hero-content">
+        <div id="sentence1" class="hero-line">Complex systems made simple</div>
+        <div id="sentence2" class="hero-line">Systems & security engineering</div>
+        <div id="sentence3" class="hero-line">CS & Math | Technion</div>
+      </div>
+      <div class="scroll-arrow"><span></span><span></span><span></span></div>
+    </header>
+
+    <div class="spiral-metadata" data-aos="fade-down">
+      <div class="local-path-wrap">
+        <span class="sys-icon"></span>
+        <span class="path-root">file:///Users/Ali/Portfolio/</span>
+        <span class="path-active">index.html V4.1</span>
+      </div>
+      <div class="status-chip">
+        <span class="pulse-dot"></span>
+        <span class="status-text">CREATED_BY:</span>
+      </div>
+    </div>
+
+    <section class="visual-anchor">
+      <div id="spiral-viewport" class="spiral-wrap">
+        <div class="hex-overlay" id="hex-stream"></div>
+        <div id="spiral-primary" class="spiral-layer"></div>
+        <div id="spiral-secondary" class="spiral-layer"></div>
+      </div>
+    </section>
+
+    <main class="main-content">
+      <section class="journey-track">
+        <h2 class="section-title">The Engineering Journey</h2>
+
+        <div class="timeline-row right">
+          <div class="timeline-visual">
+            <div class="line-gradient"></div>
+            <img class="icon-main" src="code.svg" alt="Code" />
+            <div class="line-gradient"></div>
+          </div>
+          <div class="info-card" data-aos="zoom-out">
+            <img class="decor-img" src="idk.svg" alt="" />
+            <div class="card-inner">
+              <h3 class="card-header">Foundation</h3>
+              <p class="card-paragraph">
+                Started at 13 with Lua, developing an early interest in how software interacts with system memory and network protocols.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-row left">
+          <div class="timeline-visual">
+            <div class="line-gradient"></div>
+            <img class="icon-main" src="code.svg" alt="Security" />
+            <div class="line-gradient"></div>
+          </div>
+          <div class="info-card" data-aos="zoom-out">
+            <img class="decor-img flipped" src="idk.svg" alt="" />
+            <div class="card-inner">
+              <h3 class="card-header">Reverse Engineering</h3>
+              <p class="card-paragraph">
+                Self taught Android Apps security by analyzing application layer protections and implementing custom bypasses.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-row right">
+          <div class="timeline-visual">
+            <div class="line-gradient"></div>
+            <img class="icon-main" src="code.svg" alt="Tech" />
+            <div class="line-gradient"></div>
+          </div>
+          <div class="info-card" data-aos="zoom-out">
+            <img class="decor-img" src="idk.svg" alt="" />
+            <div class="card-inner">
+              <h3 class="card-header">Technion</h3>
+              <p class="card-paragraph">
+                Currently double majoring in CS & Math at the Technion, Haifa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-section">
+        <h2 class="section-title" data-aos="fade-down">Over-All Skills</h2>
+        <div id="competencies-grid" class="skills-grid"></div>
+      </section>
+
+      <section class="grid-section">
+        <h2 class="section-title" data-aos="fade-down">Some Projects</h2>
+        <div id="research-grid" class="skills-grid"></div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════ -->
+      <!--  LIVE RECON DASHBOARD — scans visitor in real-time  -->
+      <!-- ═══════════════════════════════════════════════════ -->
+      <section id="recon-section" class="recon-section">
+        <h2 class="section-title" data-aos="fade-down">Live Recon Demo</h2>
+        <p class="recon-disclaimer" data-aos="fade-up">
+          Scroll down to trigger a passive scan of your browser.
+          No permissions requested. No data stored. All via standard Web APIs.
+        </p>
+
+        <div class="recon-wrapper" data-aos="fade-up">
+          <!-- Status bar -->
+          <div class="recon-status-bar">
+            <div class="recon-status-left">
+              <span class="recon-pulse"></span>
+              <span id="recon-status" class="recon-status-text">AWAITING SCAN...</span>
+            </div>
+            <div class="recon-status-right">
+              <span class="recon-count-label">DATA POINTS:</span>
+              <span id="recon-count" class="recon-count-value">0</span>
+            </div>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="recon-progress">
+            <div id="recon-progress-fill" class="recon-progress-fill"></div>
+          </div>
+
+          <!-- Terminal output -->
+          <div class="recon-terminal">
+            <div class="recon-terminal-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="recon-terminal-title">recon@ali-habashi.com: ~/scanner</span>
+            </div>
+            <div id="recon-output" class="recon-output"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-area">
+        <h2 class="section-title" data-aos="fade-down">Reach me out !</h2>
+        <div class="contact-flex">
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="terminal-title">ali@ali-habashi.com: ~</span>
+            </div>
+            <div class="terminal-body">
+              <span class="prompt">root@ali:~$</span>
+              <div class="typing-container">
+                <span class="typing-target"></span><span class="cursor"></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-wrap">
+            <form id="contact-form" class="main-form">
+              <div class="form-row">
+                <input name="name" id="form-name" required type="text" placeholder="Name" maxlength="100" />
+                <input name="email" id="form-email" required type="email" placeholder="Email" maxlength="254" />
+              </div>
+              <!-- ── Honeypot: invisible to humans, bots fill it ── -->
+              <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                <input type="text" name="website" id="form-website" tabindex="-1" autocomplete="off" />
+              </div>
+              <textarea name="message" id="form-message" required placeholder="Message" maxlength="5000"></textarea>
+              <button type="submit" id="form-submit">Send Message</button>
+              <div id="form-status" class="form-status"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="canvas.js?v=2"></script>
+    <script defer src="main.js?v=5"></script>
+  </body>
+</html>

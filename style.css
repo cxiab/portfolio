@@ -1459,6 +1459,17 @@ body.kernel-mode [data-aos] {
   line-height: 1.6;
 }
 
+.recon-start {
+  display: block;
+  margin: 0 auto 24px;
+  border-radius: 6px;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+}
+
+.recon-start:disabled {
+  cursor: default;
+}
+
 .recon-wrapper {
   max-width: 900px;
   margin: 0 auto;

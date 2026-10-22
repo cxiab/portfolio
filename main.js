@@ -700,18 +700,15 @@ const ReconDashboard = {
     this.countEl = document.getElementById("recon-count");
     if (!this.container) return;
 
-    const section = document.getElementById("recon-section");
-    if (section) {
-      const obs = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !this.scanActive) {
-          this.scanActive = true;
-          obs.disconnect();
-          this.scanStartTime = Date.now();
-          this.runScan();
-        }
-      }, { threshold: 0.15 });
-      obs.observe(section);
-    }
+    const start = document.getElementById("recon-start");
+    if (start) start.addEventListener("click", () => {
+      if (this.scanActive) return;
+      this.scanActive = true;
+      start.disabled = true;
+      start.textContent = "Demo Running...";
+      this.scanStartTime = Date.now();
+      this.runScan();
+    });
   },
 
   addLine(text, type = "data") {
